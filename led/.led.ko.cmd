@@ -1,1 +1,0 @@
-cmd_/home/ade/workspaces/test/s3c2440/modules/led/led.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/ade/workspaces/test/s3c2440/modules/led/led.ko /home/ade/workspaces/test/s3c2440/modules/led/led.o /home/ade/workspaces/test/s3c2440/modules/led/led.mod.o

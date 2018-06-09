@@ -1,1 +1,0 @@
-cmd_/home/ade/workspaces/test/s3c2440/modules/lcd/lcd_2440fb.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/ade/workspaces/test/s3c2440/modules/lcd/lcd_2440fb.ko /home/ade/workspaces/test/s3c2440/modules/lcd/lcd_2440fb.o /home/ade/workspaces/test/s3c2440/modules/lcd/lcd_2440fb.mod.o
