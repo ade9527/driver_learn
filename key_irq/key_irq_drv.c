@@ -52,7 +52,7 @@ static irqreturn_t buttons_irq(int irq, void *dev_id)
 	wake_up_interruptible(&my_key_waitq);
 
 	kill_fasync(&my_key_async_q, SIGIO, POLL_IN);
-	printk("the irq:%d val:%d\n", irq, pindesc_p->key_val);
+//	printk("the irq:%d val:%d\n", irq, pindesc_p->key_val);
 	return IRQ_HANDLED;
 }
 
@@ -106,15 +106,15 @@ static int my_key_read(struct file *file, char __user *buf, size_t count, loff_t
 	ret = copy_to_user(buf, &key_val, sizeof(key_val));
 	
 	ev_press = 0;
-	printk("In my_key drv:read my_key val:0x%x\n", key_val);
+//	printk("In my_key drv:read my_key val:0x%x\n", key_val);
 	return count;
 }
 
 static unsigned int my_key_poll(struct file *fp, poll_table *wait)
 {
 	unsigned int mask = 0;
-	//poll_wait(fp, &my_key_waitq, wait);
-	printk("key drv poll\n");
+	poll_wait(fp, &my_key_waitq, wait);
+//	printk("key drv poll\n");
 
 	if (ev_press)
 		mask = POLLIN | POLLRDNORM;
