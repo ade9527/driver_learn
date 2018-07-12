@@ -99,7 +99,8 @@ static int __init my_key_init(void)
 static void __exit my_key_exit(void)
 {
 	iounmap(gpfcon);
-	device_unregister(my_key_dev);
+	//device_unregister(my_key_dev);
+	device_destroy(my_key_class, MKDEV(major, 0));
 	class_destroy(my_key_class);
 
 	unregister_chrdev(major, "my_key_drv");
